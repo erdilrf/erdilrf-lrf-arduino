@@ -4,22 +4,31 @@ Arduino library for **ERDI 905 nm laser rangefinder modules** — the LR1000E2 U
 
 Install it from the Arduino IDE via **Tools → Manage Libraries…** and search for `ERDILRF_LRF`.
 
-With **PlatformIO**, install straight from Git — this works today and was verified by actually
-resolving and compiling it:
+With **PlatformIO**, install it by name from the PlatformIO Registry — verified by actually resolving
+and compiling it:
+
+```ini
+lib_deps = erdilrf/ERDILRF_LRF
+```
+
+```text
+Library Manager: Installing erdilrf/ERDILRF_LRF
+Library Manager: ERDILRF_LRF@0.2.1 has been installed!
+```
+
+Installing straight from Git also works, and tracks the repository rather than a release:
 
 ```ini
 lib_deps = https://github.com/erdilrf/erdilrf-lrf-arduino.git
 ```
 
-```text
-Library Manager: Installing git+https://github.com/erdilrf/erdilrf-lrf-arduino.git
-Library Manager: ERDILRF_LRF@0.2.0+sha.6f2a7f4 has been installed!
-```
-
-> **Not yet available by registry name.** `lib_deps = erdilrf/ERDILRF_LRF` currently fails with
-> `UnknownPackageError` — the library is **not** in the PlatformIO Registry. An earlier revision of
-> this README gave that form, which was wrong; it has been replaced with the Git form above, which was
-> tested. Publishing to the PlatformIO Registry requires a PlatformIO account and is still pending.
+> **A note on this section's history, because it was wrong twice in opposite directions.**
+> An earlier revision gave the registry form *before* the library was in the PlatformIO Registry —
+> that failed with `UnknownPackageError`. It was then replaced by the Git form plus a warning that the
+> registry form did not work. By the time that warning was published, the registry form *did* work.
+> Both revisions asserted something about the registry without re-checking it. As of this revision both
+> forms are verified working, and the registry form is given first because it is the one PlatformIO
+> users expect.
 
 ```cpp
 #include <ERDILRF_LRF.h>
