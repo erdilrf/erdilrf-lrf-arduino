@@ -143,6 +143,8 @@ to civilian applications and excludes defence use.
   reference, a zero-dependency Python host driver with 50 tests, wiring notes, and the datasheet-gap
   writeup. This library is developed there and published here so the Arduino Library Manager can index
   it (which requires `library.properties` at the repository root — impossible in a monorepo).
+* **[erdilrf.com](https://erdilrf.com)** — the ERDI 905 nm laser ranging modules this driver targets
+  (LR1000E2 UART protocol family).
 
 ## License
 
