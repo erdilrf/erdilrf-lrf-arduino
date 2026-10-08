@@ -1,0 +1,22 @@
+name: arduino-lint
+
+# 依据 Arduino Library Manager 的验收要求：
+#   「仓库必须有一个 git tag，且在该 tag 时刻必须满足全部要求」
+# 合规不是一次性的提交动作，而是每个版本都要成立的状态。
+# 这个 workflow 让「当前是否合规」随时可查，而不是等到提交 PR 才被机器人告知。
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: arduino/arduino-lint-action@v2
+        with:
+          library-manager: submit
+          compliance: specification

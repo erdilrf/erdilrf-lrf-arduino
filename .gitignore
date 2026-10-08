@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+.pio/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+*~
+*.exe
+*.development
